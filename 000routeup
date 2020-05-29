@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# PPP up hook script for route
+#
+# Reconfigures resolver to take into account
+# the appearance of the ppp interface.
+#
+# This file is part of the Quectel script.
+#
+
+route add default dev ${PPP_IFACE}
+route del default dev eth0
+exit 0

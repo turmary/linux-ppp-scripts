@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# PPP up hook script for route
+#
+# Reconfigures resolver to take into account
+# the appearance of the ppp interface.
+#
+# This file is part of the Quectel script.
+#
+
+route add default gw 192.168.4.2
+exit 0

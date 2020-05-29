@@ -38,8 +38,8 @@ dpkg --purge pppconfig
 cp quectel-chat-connect $TARGET/peers
 cp quectel-chat-disconnect $TARGET/peers
 cp quectel $TARGET/peers
-#cp 000routeup $TARGET/ip-up.d/
-#cp 000routedown $TARGET/ip-down.d/
+cp 000routeup $TARGET/ip-up.d/
+cp 000routedown $TARGET/ip-down.d/
 # disable resolvconf for PPP
 # sed -i '9,9c exit 0' /etc/ppp/ip-up.d/000resolvconf
 # cp ip-up $TARGET/
@@ -48,6 +48,7 @@ cp quectel-onoff.sh /usr/bin/
 chmod a+x /usr/bin/quectel-onoff.sh
 
 # 3. Remove service ModemManager
+# Modem Manager will cause ppp unstable
 killall ModemManager
 systemctl stop ModemManager
 systemctl disable ModemManager
