@@ -1,13 +1,16 @@
-# /etc/ppp/peers/quectel-pppd
-# Usage:root>pppd call quectel-pppd
+# /etc/ppp/peers/quectel
+# Usage:root>pppd call quectel
 #Modem path, like /dev/ttyUSB3,/dev/ttyACM0, depend on your module, default path is /dev/ttyUSB3
 /dev/ttyUSB3 115200
 #Insert the username and password for authentication, default user and password are test
-user "test" password "test"
+user "" password ""
 # The chat script, customize your APN in this file
 connect 'chat -s -v -f /etc/ppp/peers/quectel-chat-connect'
+#connect '/usr/bin/wvdial -c'
+#connect 'stty -F /dev/ttyUSB3 1>&2'
 # The close script
 disconnect 'chat -s -v -f /etc/ppp/peers/quectel-chat-disconnect'
+#disconnect '/usr/bin/wvdial -c /etc/ppp/peers/quectel-chat-disconnect'
 # Hide password in debug messages
 hide-password
 # The phone is not required to authenticate
@@ -17,15 +20,21 @@ debug
 # If you want to use the HSDPA link as your gateway
 defaultroute
 # pppd must not propose any IP address to the peer
-noipdefault
+#noipdefault
 # No ppp compression
+#-chap
 novj
+#nobsdcomp
 novjccomp
+#nopcomp
+#noaccomp
+#asyncmap 0
 noccp
 ipcp-accept-local
 ipcp-accept-remote
 local
 # For sanity, keep a lock on the serial line
+#receive-all
 lock
 modem
 dump
@@ -37,3 +46,5 @@ ipparam 3gppp
 ipcp-max-failure 30
 # Ask the peer for up to 2 DNS server addresses
 usepeerdns
+#mtu 1500
+
