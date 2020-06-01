@@ -25,7 +25,9 @@ function quectel_poweronoff() {
 	sleep 0.1
 
 	# enable LTE VBAT
-	gpio set $PIN_LTEVBAT_EN
+	#
+	# VBAT always powered in the circuit.
+	# gpio set $PIN_LTEVBAT_EN
 	sleep 0.1
 
 	# deassert RESET
