@@ -3,7 +3,11 @@
 #Modem path, like /dev/ttyUSB3,/dev/ttyACM0, depend on your module, default path is /dev/ttyUSB3
 /dev/ttyUSB3 115200
 #Insert the username and password for authentication, default user and password are test
-user "" password ""
+user "true" password "true"
+# True Move H
+
+# user "" password ""
+# China Unicom
 # The chat script, customize your APN in this file
 connect 'chat -s -v -f /etc/ppp/peers/quectel-chat-connect'
 #connect '/usr/bin/wvdial -c'

@@ -9,6 +9,17 @@ TIMEOUT 30
 OK ATE0
 OK ATI;+CSUB;+CSQ;+CPIN?;+COPS?;+CGREG?;&D2
 # Insert the APN provided by your network operator, default apn is 3gnet
-OK AT+CGDCONT=1,"IP","3gnet",,0,0
+OK AT+CGDCONT=1,"IP","internet",,0,0
+# True Move H
+
+#OK AT+CGDCONT=1,"IP","3gnet",,0,0
+# China Unicom
+
+# Dial Number 1
 OK ATD*99#
+# Comment previous line (prefix with#) if failed.
+
+# Dial Number 2
+# Uncomment next line if try Dial Number 2
+#OK ATDT*99***1#
 CONNECT
