@@ -20,8 +20,8 @@ function quectel_poweronoff() {
 
 	# enable GNSS ANTENNA power
 	gpio clear $PIN_ANTENNA
-	# enable  LTE 5V
-	gpio set $PIN_LTE5V_EN
+	# disable  LTE 5V
+	gpio clear $PIN_LTE5V_EN
 	sleep 0.1
 
 	# enable LTE VBAT
@@ -47,6 +47,8 @@ function quectel_poweronoff() {
 
 	# issue Sleep
 	# gpio set $PIN_WAKEUP_IN
+	# enable  LTE 5V
+	gpio set $PIN_LTE5V_EN
 }
 
 
